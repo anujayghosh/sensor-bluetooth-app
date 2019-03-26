@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Unilever App</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="error_name">Enter Full Name</string>
+    <string name="error_email">Enter Valid Email</string>
+    <string name="error_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="text_not_member">Not a member? Register.</string>
+    <string name="text_already_member">Already a member? Login.</string>
+    <string name="error_password_match">Password does not match.</string>
+    <string name="error_valid_email_password">Invalid Email or Password</string>
+    <string name="error_email_exists">This email is already registered.</string>
+    <string name="graphBtn">Graph</string>
+    <string name="viewDatBtn">View Data</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="processMessage">Process Messages Will Appear Here</string>
+    <string name="enterfilename">Enter Filename</string>
+    <string name="saveas">Save As:</string>
+    <string name="filebody">File Body</string>
+    <string name="savefile">Save Concentration</string>
+    <string name="unpaireddevices">Unpaired Devices:</string>
+    <string name="paireddevices">Paired Devices:</string>
+    <string name="startConnectBtn">Start</string>
+    <string name="stopConnectBtn">Stop</string>
+    <string name="receiveddata">Received Data:</string>
+    <string name="sendHint">Enter Commands Here</string>
+    <string name="sendBtn">Send</string>
+    <string name="savedataBtn">Save Received Data</string>
+    <string name="receivedDataHint">Received Data will be Displayed here.</string>
+    <string name="website">www.cense.iisc.ac.in</string>
+
+</resources>

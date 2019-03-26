@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/redbg"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_padding_bottom"
+    android:paddingStart="@dimen/activity_padding_left"
+    android:paddingEnd="@dimen/activity_padding_right"
+    android:paddingTop="@dimen/activity_padding_top">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_padding_bottom"
+        android:paddingEnd="@dimen/activity_padding_right"
+        android:paddingStart="@dimen/activity_padding_left"
+        android:paddingTop="@dimen/activity_padding_top">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/hello_world"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/futuraheavyfont"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clipToPadding="false"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/onOffBTBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:contentDescription="ON/OFF"
+                app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="337dp" />
+
+            <ImageButton
+                android:id="@+id/btDiscoverableBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:contentDescription="Make your device discoverable"
+                android:onClick="btMakeDiscoverable"
+                app:srcCompat="@drawable/ic_bluetooth_searching_black_24dp"
+                tools:layout_editor_absoluteX="87dp"
+                tools:layout_editor_absoluteY="339dp" />
+
+            <ImageButton
+                android:id="@+id/btDiscoverDevicesBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:contentDescription="Scan for devices nearby"
+                android:onClick="btnDiscover"
+                app:srcCompat="@drawable/ic_settings_bluetooth_black_24dp"
+                tools:layout_editor_absoluteX="162dp"
+                tools:layout_editor_absoluteY="337dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/unpairedDevicesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/unpaireddevices"
+            android:textAlignment="center"
+            android:fontFamily="@font/futuraheavyfont"
+            android:textColor="@color/colorText" />
+
+        <ListView
+            android:id="@+id/lvDiscover"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discoverableBtn">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/pairedDevicesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/paireddevices"
+            android:textAlignment="center"
+            android:fontFamily="@font/futuraheavyfont"
+            android:textColor="@color/colorText" />
+
+        <ListView
+            android:id="@+id/lvPaired"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discoverableBtn">
+
+        </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/startConnectionBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorBtn"
+                android:text="@string/startConnectBtn"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/stopConnectionBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorBtn"
+                android:text="@string/stopConnectBtn"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/graphBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_dark"
+                android:onClick="makeGraph"
+                android:text="@string/graphBtn"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

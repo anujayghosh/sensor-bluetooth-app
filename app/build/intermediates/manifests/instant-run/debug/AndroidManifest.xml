@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iisc.xyz.test13"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="27" />
+
+    <uses-feature android:name="android.hardware.bluetooth" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.iisc.xyz.test13.activities.LoginActivity" >
+            android:screenOrientation="portrait" />
+        </activity>
+        <activity
+            android:name="com.iisc.xyz.test13.activities.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iisc.xyz.test13.activities.UsersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iisc.xyz.test13.activities.LineChartActivity1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iisc.xyz.test13.activities.SaveDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iisc.xyz.test13.activities.GraphActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.iisc.xyz.test13.activities.ReadFileActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.iisc.xyz.test13.activities.SplashScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.iisc.xyz.test13.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>
